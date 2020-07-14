@@ -52,7 +52,7 @@ class OrganizationSecurityAndPrivacyContent extends AsyncView<Props> {
           onSubmitSuccess={(_resp, model) => {
             this.handleUpdateOrganization(model.initialData as Organization);
           }}
-          onSubmitError={() => addErrorMessage('Unable to save change')}
+          onSubmitError={() => addErrorMessage(t('Unable to save change'))}
           saveOnBlur
           allowUndo
         >
