@@ -47,10 +47,8 @@ class ProjectSecurityAndPrivacy extends AsyncView<ProjectSecurityAndPrivacyProps
           initialData={initialData}
           apiMethod={apiMethod}
           apiEndpoint={endpoint}
-          onSubmitSuccess={(_resp, model) => {
-            this.handleUpdateProject(model.initialData as Project);
-          }}
-          onSubmitError={() => addErrorMessage(t('Unable to save change'))}
+          onSubmitSuccess={this.handleUpdateProject}
+          onSubmitError={() => addErrorMessage('Unable to save change')}
         >
           <JsonForm
             title={t('Security & Privacy')}

@@ -49,9 +49,7 @@ class OrganizationSecurityAndPrivacyContent extends AsyncView<Props> {
           apiEndpoint={endpoint}
           initialData={initialData}
           additionalFieldProps={{hasSsoEnabled: !!authProvider}}
-          onSubmitSuccess={(_resp, model) => {
-            this.handleUpdateOrganization(model.initialData as Organization);
-          }}
+          onSubmitSuccess={this.handleUpdateOrganization}
           onSubmitError={() => addErrorMessage(t('Unable to save change'))}
           saveOnBlur
           allowUndo
